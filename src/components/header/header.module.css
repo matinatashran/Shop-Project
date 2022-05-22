@@ -1,0 +1,149 @@
+:root{
+    --circle-size: 250px;
+    --purple: #b500fd;
+}
+
+@font-face {
+    font-family: Righteous;
+    src: url("../../fonts/Righteous-Regular.ttf");
+}
+
+@font-face {
+    font-family: Courgette;
+    src: url("../../fonts/Courgette-Regular.ttf");
+}
+
+.headerContainer{
+    width: 99.5%;
+    height: 80vh;
+    position: relative;
+    border: 3px solid var(--purple);
+    margin: 0.5% auto;
+    border-radius: 10px;
+}
+
+h1{
+    font-size: 4rem;
+    font-family: Courgette;
+    color: #0783f7;
+    position: absolute;
+    right: 50px;
+    bottom: 17rem;
+}
+
+.circle{
+    width: var(--circle-size);
+    height: var(--circle-size);
+    position: absolute;
+    bottom: 2.5rem;
+    left: 5rem;
+    background-color: var(--purple);
+    border-radius: 50%;
+}
+
+.circle a{
+    text-decoration: none;
+    font-family: Righteous;
+    color: #ffffff;
+    position: absolute;
+    font-size: 2.1rem;
+    transition: 0.3s;
+}
+
+.circle a:hover{
+    transform: scale(1.3);
+}
+
+.instagram { bottom: 11.5rem; left: 4rem;}
+.telegram { bottom: 8.5rem; left: 1.3rem;}
+.whatsapp { bottom: 4.5rem; left: 1.3rem;}
+.github { bottom: 1.5rem; left: 4rem;}
+
+
+.line{
+    width: 100%;
+    height: 45px;
+    background-color: var(--purple);
+    position: absolute;
+    bottom: 10rem;
+}
+
+
+@media (max-width: 1044px){
+    h1{
+        font-size: 2.7rem;
+        right: 30px;
+    }
+}
+
+@media (max-width: 844px){
+    :root{
+        --circle-size: 180px
+    }
+
+    h1{
+        font-size: 2.5rem;
+        right: 30px;
+        bottom: 16rem;
+    }
+
+    .circle{
+        bottom: 4.5rem;
+        left: 3rem;
+    }
+
+    .circle a{
+        font-size: 1.7rem;
+    }
+
+    .circle a:hover{
+        transform: scale(1.2);
+    }
+
+    .instagram { bottom: 8.4rem; left: 3rem;}
+    .telegram { bottom: 6rem; left: 1rem;}
+    .whatsapp { bottom: 3.3rem; left: 1rem;}
+    .github { bottom: 0.9rem; left: 3rem;}
+}
+
+@media (max-width: 620px){
+    h1{
+        font-size: 2rem;
+        right: 20px;
+    }
+}
+
+@media (max-width: 450px){
+    :root{
+        --circle-size: 150px
+    }
+
+    h1{
+        font-size: 1.5rem;
+        right: 20px;
+        bottom: 14rem;
+    }
+
+    .circle{
+        bottom: 2.5rem;
+        left: 2rem;
+    }
+
+    .circle a{
+        font-size: 1.5rem;
+    }
+
+    .circle a:hover{
+        transform: scale(1);
+    }
+
+    .instagram { bottom: 6.8rem; left: 3rem;}
+    .telegram { bottom: 4.8rem; left: 1rem;}
+    .whatsapp { bottom: 2.2rem; left: 1rem;}
+    .github { bottom: 0.7rem; left: 3rem;}
+
+    .line{
+        height: 35px;
+        bottom: 7rem;
+    }
+}

@@ -1,0 +1,263 @@
+@font-face {
+    font-family: Courgette-Regular;
+    src: url("../fonts/Courgette-Regular.ttf");
+}
+
+
+.detailContainer{
+    width: 100%;
+}
+
+.title{
+    text-align: left;
+    margin: 40px 20px;
+    font-family: Righteous;
+    font-weight: bold;
+    font-size: 3.2rem;
+    position: fixed;
+    top: -40px;
+    background-color: #ffffff;
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+    z-index: 99;
+}
+
+.title span{
+    color: #5b18be;
+    margin-right: 10px;
+}
+
+.left{
+    width: 90%;
+    display: flex;
+    margin: 130px auto 20px auto;
+    min-height: 80vh;
+    box-shadow: 0 0 6px 1px #490986;
+    border-radius: 10px;
+}
+
+.productInfo{
+    width: 60%;
+    height: 100%;
+    position: relative;
+    margin-top: 50px;
+}
+
+.productInfo div{
+    width: 99%;
+    margin: 5px auto 15px auto;
+    font-family: sans-serif;
+    font-weight: bold;
+    padding: 20px 30px;
+}
+
+.productInfo div > span{
+    font-family: Courgette-Regular;
+    font-weight: 900;
+    display: block;
+    margin: 15px -10px;
+    color: #490986;
+    font-size: 1.5rem;
+}
+
+.productTitle{
+    text-align: center;
+    min-height: 6vh;
+    color: #0077ff;
+    font-size: 1.3rem;
+}
+
+.ProductCategory{
+    font-size: 1.6rem;
+    color: #092e86;
+    border-bottom: 1px solid #cdcdcd;
+}
+
+.productDescr{
+    min-height: 22vh;
+    font-size: 0.85rem;
+    color: #7c4aab;
+    border-bottom: 1px solid #cdcdcd;
+}
+
+.productPrice span{
+    box-shadow: 0px 0 6px 1px #490986;
+    width: 130px !important;
+    font-family: sans-serif !important;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #1eb125 !important;
+    font-size: 1.2rem !important;
+    border-radius: 5px;
+    font-weight: bold !important;
+}
+
+.buttonsAndLinkBox{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.buttonsBox{
+    width: 50% !important;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.link, 
+.buttonsBox button{
+    height: 33px;
+    border-radius: 5px;
+    border: 2px solid #490986;
+    background-color: transparent;
+    color: #490986;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s; 
+}
+
+.link{
+    width: 130px;
+}
+
+.incOrDecOrRemoveBtn{
+    width: 33px;
+}
+
+.addCartBtn{
+    width: 100px;
+}
+
+.quantity{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    background-color: #ffd500;
+    color: #3f236d;
+    font-family: sans-serif !important;
+    font-weight: bold !important;
+    font-size: 1.2rem !important;
+    position: absolute;
+    top: 5px;
+    right: 47.6%;
+}
+
+.buttonsAndLinkBox button:hover{
+    color: #ffffff;
+    background-color: #490986;
+}
+
+.link:hover a{
+    color: #ffffff;
+}
+
+.link a{
+    text-decoration: none;
+}
+
+
+
+/* Right */
+
+.right{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageBox{
+    width: 85%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 2px solid #7e40b9ba;
+    margin: 30px 10px;
+}
+
+.imageBox img{
+    width: 54%;
+    height: 80%;
+    padding: 50px 0;
+}
+
+
+
+@media (max-width: 1000px){
+
+    .title{
+        margin: 30px 20px;
+        font-size: 2.5rem;
+    }
+
+    .left{
+        flex-direction: column-reverse; 
+    }
+
+    .imageBox{
+        border-left: none;
+        border-bottom: 2px solid #7e40b9ba;
+    }
+
+    .productInfo, 
+    .right{
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px){
+
+    .title{
+        font-size: 2rem;
+    }
+
+    .productInfo div{
+        margin: 20px auto;
+    }
+
+    .productInfo div span{
+        font-size: 1.2rem;
+    }
+
+    .productTitle{
+        font-size: 1.1rem;
+    }
+
+    .ProductCategory{
+        font-size: 1.3rem;
+    }
+
+    .productPrice span{
+        width: 100px !important;
+        height: 30px;
+        line-height: 30px;
+        font-size: 1.1rem !important;
+    }
+
+
+
+    .buttonsBox{
+        width: 80% !important;
+    }
+}
+
+@media (max-width: 500px){
+    .buttonsAndLinkBox{
+        flex-direction: column-reverse;
+    }
+
+    .buttonsBox{
+        display: flex;
+    }
+
+    .addCartBtn{
+        margin: 0 auto;
+    }
+}

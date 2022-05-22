@@ -1,0 +1,57 @@
+@font-face {
+    font-family: Righteous;
+    src: url("../../fonts/Righteous-Regular.ttf");
+}
+
+@font-face {
+    font-family: Kanit-italic;
+    src: url("../../fonts/Kanit-Italic.ttf");
+}
+
+
+.footerContainer{
+    width: 100%;
+    text-align: center;
+    font-family: Righteous;
+}
+
+.footerContainer div{
+    width: 100%;
+    height: 6.5vh;
+    line-height: 7vh;
+}
+
+.belong{
+    background-color: #6f5b8f;
+    margin-bottom: 3px;
+    color: #fff;
+    border-radius: 16px 16px 0 0 ;
+}
+
+.aouther{
+    background-color: #ffd500;
+}
+
+.aouther a{
+    font-family: Kanit-italic;
+    font-weight: bold;
+    text-decoration: none;
+    color: #490986;
+    transition: 0.3s;
+}
+
+.aouther a:hover{
+    color: #fff;
+}
+
+@media (max-width: 480px){
+    .footerContainer div{
+        height: 5vh;
+        line-height: 5vh;
+    }
+
+    .belong, 
+    .aouther{ 
+        font-size: 0.8rem;
+    }
+}

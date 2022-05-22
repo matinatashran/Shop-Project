@@ -1,0 +1,57 @@
+.field *,
+.checkBox *{
+    margin: 5px 20px;
+}
+
+.field, 
+.checkBox{
+    margin: 20px 0;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.field, 
+.checkBox label{
+    color: #0073ff;
+}
+
+.field input{
+    display: block;
+    width: 92%;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: 1px solid #5b18be;
+}
+
+.field input:focus{
+    outline: none;
+}
+
+.field span, 
+.checkBox span{
+    font-size: 0.9rem;
+    color: #ff0000;
+}
+
+.checkBox span{
+    display: block;
+}
+
+.checkBox input:checked{
+    background-color: #0073ff;
+    color: #0073ff;
+}
+
+
+
+@media (max-width: 500px) {
+    .field *,
+    .checkBox *{
+        margin: 5px 8px;
+    }
+
+    .field span, 
+    .checkBox span{
+        font-size: 0.8rem;
+    }
+}

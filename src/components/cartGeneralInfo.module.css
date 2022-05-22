@@ -1,0 +1,38 @@
+@font-face {
+    font-family: Kanit-italic;
+    src: url("../fonts/Kanit-Italic.ttf");
+}
+
+.cartGeneralInfoContainer{
+    width: 99%;
+    height: 55px;
+    margin: 20px auto;
+    box-shadow: 0 0 5px 1px #b500fd;
+    border-radius: 10px;
+    position: sticky;
+    top: 1.8px;
+    left: 0;
+    z-index: 99;
+    font-family: Kanit-italic;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.cartIcon{
+    font-size: 2rem;
+    transition: 0.3s;
+}
+
+.cartIcon a{
+    color: #ff0000;
+}
+
+.cartIcon:hover{
+    transform: scale(1.1);
+}
+
+.quantity{ color: #ff0000; }
+.total{color: #00ce00;}

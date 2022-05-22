@@ -1,0 +1,138 @@
+.productContainer{
+    width: 250px;
+    height: 340px;
+    text-align: center;
+    margin: 35px;
+    position: relative;
+    font-family: sans-serif;
+    font-weight: bold;
+    box-shadow: 0 0 5px 2px #c4c4c4;
+    border-radius: 8px;
+}
+
+.productContainer > div:not(.imageBox){
+    width: 100%;
+}
+
+.imageBox{
+    width: 100px;
+    height: 110px;
+    margin: 30px auto 10px auto;
+}
+
+.imageBox img{
+    width: 100%;
+    height: 100%;
+}
+
+.discount{
+    font-size: 2.8rem;
+    position: absolute;
+    top: 1px;
+    left: -39%;
+    color: #f00;
+    transform: rotate(-25deg);
+    transition: 0.5s;
+}
+
+.productContainer:hover .discount{
+    transform: rotate(0);
+}
+
+.discount span{
+    font-size: 0.8rem;
+    position: absolute;
+    top: 20px;
+    right: 45%;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: #fff;
+}
+
+.title{
+    padding: 0 10px;
+    margin: 20px 0;
+    position: absolute;
+    top: 47%;
+    font-size: 0.8rem;
+    color: #3f236d;
+}
+
+.priceANDquantity{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 58px;
+}
+
+.priceANDquantity *,  
+.buttonAndLinkBox *{
+    margin: 0 15px;
+}
+
+.price{
+    box-shadow: 1px 0 3px 1px #490986;
+    padding: 4px 10px;
+    color: #1eb125;
+    font-size: 0.9rem;
+    border-radius: 0 5px 5px 0;
+    margin: 0;
+}
+
+.quantity{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    background-color: #ffd500;
+    color: #3f236d;
+    font-family: sans-serif !important;
+}
+
+.buttonAndLinkBox{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    bottom: 15px;
+}
+
+.addCartBtn,
+.incOrDecOrRemoveBtn{
+    height: 28px;
+    border-radius: 5px;
+    border: 2px solid #490986;
+    color: #490986;
+    font-weight: bold;
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.addCartBtn{
+    width: 100px;
+    margin: 0;
+}
+
+.incOrDecOrRemoveBtn{
+    width: 42px;
+    margin: 0 1px;
+}
+
+.buttonAndLinkBox a{
+    text-decoration: none;
+    color: #0051ff;
+    font-size: 0.9rem;
+}
+
+
+.buttonBox button:hover{
+    color: #fff;
+    background-color: #490986;
+}
+
+.buttonBox button:active{
+    transform: scale(0.95);
+}
