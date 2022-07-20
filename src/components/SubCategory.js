@@ -30,11 +30,6 @@ const SubCategory = () => {
             <div className={style.title}>
                 <span>{category}</span>
             </div>
-            <div className={style.btnBox}>
-                <button className={style.backBtn}>
-                    <Link to="/home">Back to Home</Link>
-                </button>
-            </div>
             <div className={style.productsBox}>
                 {
                     allProducts.map(item => item.category === category &&
