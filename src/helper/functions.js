@@ -32,12 +32,6 @@ const validate = (data, type) => {
             }
         }
         
-        else if (data.name === "Number"){
-            if (!data.value){
-                error = "Number required";
-            }
-        }
-        
         else if (data.name === "Password"){
             if (!data.value){
                 error = "Password required";
@@ -53,7 +47,7 @@ const validate = (data, type) => {
                 error = "ConfirmPassword required";
             }
             else if (data.value !== password){
-                error = "ConfirmPassoword is not match width Password";
+                error = "Passwords are not matched";
             }
         }
         

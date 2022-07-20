@@ -18,36 +18,36 @@ const Categories = () => {
                 <span>Categories</span>
             </div>
             <div className={style.categories}>
-                <div>
-                    <Link to="/categories/electronics">
-                        <div>
+                <div className={style.category}>
+                    <div className={style.image}>
+                        <Link to="/categories/electronics">
                             <img src={electronics}/>
-                        </div>
-                    </Link>
+                        </Link>
+                    </div>
                     <span>Electronics</span>
                 </div>
-                <div>
-                    <Link to="/categories/jewelery">
-                        <div>
+                <div className={style.category}>
+                    <div className={style.image}>
+                        <Link to="/categories/jewelery">
                             <img src={jewelery}/>
-                        </div>
-                    </Link>
+                        </Link>
+                    </div>
                     <span>Jewelery</span>
                 </div>
-                <div>
-                    <Link to="/categories/men's clothing">
-                        <div>
+                <div className={style.category}>
+                    <div className={style.image}>
+                        <Link to="/categories/men's clothing">
                             <img src={menClothes}/>
-                        </div>
-                    </Link>
+                        </Link>
+                    </div>
                     <span>Men's Clothing</span>
                 </div>
-                <div>
-                    <Link to="/categories/women's clothing">
-                        <div>
+                <div className={style.category}>
+                    <div className={style.image}>
+                        <Link to="/categories/women's clothing">
                             <img src={womenClothes}/>
-                        </div>
-                    </Link>
+                        </Link>
+                    </div>
                     <span>Women's Clothing</span>
                 </div>
             </div>

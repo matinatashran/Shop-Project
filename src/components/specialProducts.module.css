@@ -4,14 +4,19 @@
 }
 
 .title{
-    width: 100%;
+    width: 300px;
     height: 50px;
-    line-height: 50px;
-    background: linear-gradient(to right, #fff 15%, #b500fd, #fff 85%);
-    text-align: center;
-    color: #fff;
+    line-height: 45px;
+    border: 3px solid #ff4400;
+    border-right: none;
+    margin: 0 20px;
+    text-align: left;
+    padding: 0 20px;
+    border-radius: 30px 0 0 30px;
+    color: #212121;
     font-family: Righteous;
-    font-size: 2rem;
+    font-size: 1.3rem;
+    font-weight: bold;
 }
 
 .productsBox{
@@ -23,19 +28,17 @@
 }
 
 
-
-@media (max-width: 844px){
+@media (max-width: 768px){
     .title{
-        height: 40px;
+        width: 260px;
+        height: 45px;
         line-height: 40px;
-        font-size: 1.5rem;
+        font-size: 1.1rem;
     }
 }
 
-@media (max-width: 530px){
+@media (max-width: 480px){
     .title{
-        height: 35px;
-        line-height: 35px;
-        font-size: 1.1rem;
+        width: 190px;
     }
 }

@@ -1,23 +1,18 @@
 import React from 'react';
 
 // style
-import './loading.css';
+import style from './loading.module.css';
+
+// component
+import LoadingCard from './LoadingCard';
 
 const Loading = () => {
     return (
-        <div className="loading">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+        <div className={style.loadingContainer}>
+            <LoadingCard/>
+            <LoadingCard/>
+            <LoadingCard/>
+            <LoadingCard/>
         </div>
     );
 };

@@ -1,0 +1,163 @@
+.navbarContainer{
+    width: 100%;
+    height: 50px;
+    margin: 5px auto;
+    padding: 0 30px;
+    font-family: Righteous;
+    font-size: 1.2rem;
+    background-color: #ff4400;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.buttonBox{
+    display: flex;
+    align-items: center;
+}
+
+.buttonBox a{
+    text-decoration: none;
+    padding: 6px 15px;
+    margin: 0 3.5px;
+    border-radius: 5px;
+    border: none;
+    background-color: #fff;
+    color: #ff4400;
+    font-size: 1.1rem;
+    font-family: Kanit-italic;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.links{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.links li a{
+    text-decoration: none;
+    color: #fff;
+    margin: 10px 20px;
+    padding: 6px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.links li a:hover{
+    border-bottom: 2px solid #3c3c3c;
+}
+
+/* mobile Device - Burger menu */
+
+.burgerMenu{
+    width: 100%;
+    height: 200px;
+    background-color: #000000da;
+    position: absolute;
+    left: 0;
+    padding: 20px;
+}
+
+.burgerMenuIcon{
+    color: #ff4400;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 1.3rem;
+    display: none;
+    cursor: pointer;
+}
+
+.burgerMenuLinks{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-bottom: 1px solid #ff4400;
+    font-size: 0.9rem;
+    position: relative;
+}
+
+.burgerMenuLinks li{
+    margin: 10px 0;
+}
+
+.burgerMenuLinks li a{
+    text-decoration: none;
+    color: #fff;
+    margin: 20px 20px;
+}
+
+.burgerMenuButtons{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.burgerMenuButtons a{
+    text-decoration: none;
+    color: #ff4400;
+    margin: 10px 20px;
+}
+
+.cross{
+    color: #ff4400;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    z-index: 99;
+}
+
+
+@media (max-width: 768px){
+    .navbarContainer{
+        height: 40px;
+        padding: 0 20px;
+        font-size: 1rem;
+    }
+
+    .links li a{
+        margin: 10px 20px;
+        padding: 6px 0;
+    } 
+
+    .buttonBox a{
+        padding: 3px 10px;
+        margin: 0 3.5px;
+        font-size: 1rem;
+    }
+}
+
+
+@media (max-width: 480px){
+    .navbarContainer{
+        background-color: transparent;
+    }
+
+    .buttonBox, .links{
+        display: none;
+    }
+
+    .burgerMenuIcon{
+        display: block;
+    }    
+}
+
+@media (max-width: 320px){
+    .burgerMenuButtons{
+        flex-direction: column;
+    }
+
+    .burgerMenuButtons a{
+        margin: 5px 20px;
+        font-size: 0.9rem;
+    }
+}

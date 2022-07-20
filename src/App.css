@@ -1,3 +1,26 @@
+@font-face {
+    font-family: Kanit-italic;
+    src: url("./fonts/Kanit-Italic.ttf");
+}
+
+@font-face {
+    font-family: Righteous;
+    src: url("./fonts/Righteous-Regular.ttf");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .shoppingContainer{
     position: relative;
+}
+
+@media (min-width: 1600px) {
+    .shoppingContainer{
+        width: 1540px;
+        margin: 0 auto;
+    }
 }

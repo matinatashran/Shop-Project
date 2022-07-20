@@ -1,0 +1,57 @@
+.notifyContainer{
+    width: 900px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: #fff;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: calc(50% - 450px);
+    font-family: Righteous;
+    box-shadow: 0 0 10px #000;
+    font-size: 1.1rem;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.cross{
+    position: absolute;
+    top: 11px;
+    right: 17px;
+    color: #ff4400;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 2px;
+}   
+
+.notifyText{
+    margin: 18px;
+    color: #1c4b8b;
+}
+
+.btn{
+    position: absolute;
+    top: 100px;
+    left: 100px;
+}
+
+@media (max-width: 1200px) {
+    .notifyContainer{
+        width: 700px;
+        left: calc(50% - 350px);
+    }
+}
+
+@media (max-width: 768px) {
+    .notifyContainer{
+        width: 450px;
+        left: calc(50% - 225px);
+    }
+}
+
+@media (max-width: 480px) {
+    .notifyContainer{
+        width: 95%;
+        left: 10px;
+    }
+}

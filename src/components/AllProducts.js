@@ -18,7 +18,8 @@ const AllProducts = () => {
     const discount = 0;
 
     useEffect(() => {
-        dispatchProducts(fetchAPI("ALL"));
+        if (!allProducts.length)
+            dispatchProducts(fetchAPI("ALL"));
     }, [])
 
     return (

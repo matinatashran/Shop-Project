@@ -1,0 +1,55 @@
+.loadingCardContainer{
+    width: 250px;
+    height: 340px;
+    margin: 35px;
+    position: relative;
+    box-shadow: 0 0 5px 1px #cccccc;
+    border-radius: 40px;
+}
+
+.loadingCardContainer div{
+    background-color: #e3e3e3;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.loadingCardContainer div::after{
+    content: "";
+    position: absolute;
+    top: -15px;
+    right: -40%;
+    width: 40px;
+    height: 180%;
+    background-color: #f3f3f3d1;
+    transform: rotate(20deg);
+    animation: loading 2s infinite;
+}
+
+.one{
+    width: 80%;
+    height: 200px;
+    margin: 20px auto;
+}
+
+.two{
+    width: 90px;
+    height: 25px;
+    margin-left: 10px;
+}
+
+.three{
+    width: 80%;
+    height: 30px;
+    margin: 25px auto 0 auto;
+}
+
+@keyframes loading {
+    0%{
+        right: -40%;
+    }
+
+    100%{
+        right: 140%;
+    }
+}

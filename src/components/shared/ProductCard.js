@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
+import styled from 'styled-components';
 
 // style
 import style from './productCard.module.css';
@@ -10,6 +11,7 @@ import { quantityCount } from '../../helper/functions';
 
 // actions
 import { addItem, removeItem, increaseItem, decreaseItem } from '../../redux/cart/cartActions';
+
 
 const ProductCard = ({ id, title, image, price, category, discount, productData }) => {
 
@@ -25,44 +27,42 @@ const ProductCard = ({ id, title, image, price, category, discount, productData 
             
             {
                 discount ? 
-                    <div className={style.discount}>
-                        <i className="fa fa-certificate">
-                            <span>{discount}%</span>
-                        </i>
+                    <div className={style.discountBox}>
+                        <span>{discount}%</span>
                     </div>
-                    
                 :
                     null
             }
 
-            <div className={style.title}>
-                {title}
+            <div className={style.price}>
+                <span>{price - price * (discount / 100)} $</span>
             </div>
-            <div className={style.priceANDquantity}>
-                <span className={style.price}>{price - price * (discount / 100)} $</span>
-                {
-                    quantity &&
-                    <span className={style.quantity}>{quantity}</span>
-                }
-            </div>
-            <div className={style.buttonAndLinkBox}>
-                <Link to={`/products/${id}`}>Detail</Link>
-                <div className={style.buttonBox}>
+            <div className={style.bottomBox}>
+                <div className={style.detail}>
+                    <Link to={`/products/${id}`}>Detail</Link>
+                </div>
+                <div className={style.buttonAndQuantityBox}>
                     {
                         quantity === 1 &&
-                            <button className={style.incOrDecOrRemoveBtn + ' ' + style.remove} 
+                            <button className={style.removeBtn} 
                                 onClick={() => dispatchCart(removeItem(productData, discount))}>
                                 <i className='fa fa-trash'></i>
                             </button>
                     }
                     {
-                        quantity > 1 &&
-                            <button className={style.incOrDecOrRemoveBtn} 
-                                onClick={() => dispatchCart(decreaseItem(productData, discount))}>-</button>
+                            quantity > 1 &&
+                                <button className={style.incOrDecBtn} 
+                                    onClick={() => dispatchCart(decreaseItem(productData, discount))}>-</button>
+                    }
+                    {
+                        quantity &&
+                            <div className={style.quantity}>
+                                <span>{quantity}</span>
+                            </div>
                     }
                     {
                         quantity ?
-                            <button className={style.incOrDecOrRemoveBtn} 
+                            <button className={style.incOrDecBtn} 
                                 onClick={() => dispatchCart(increaseItem(productData, discount))}>+</button>
                         :
                             <button className={style.addCartBtn} 

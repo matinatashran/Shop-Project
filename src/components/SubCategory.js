@@ -17,7 +17,8 @@ const SubCategory = () => {
     const dispatchProducts = useDispatch();
 
     useEffect(() => {
-        dispatchProducts(fetchAPI("ALL"));
+        if (!allProducts.length)
+            dispatchProducts(fetchAPI("ALL"));
     }, [])
 
     const { category } = useParams();

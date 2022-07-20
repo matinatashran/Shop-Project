@@ -1,0 +1,82 @@
+.headerContainer{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    filter: grayscale(1);
+}
+
+.leftSection{
+    background: url("../images/women-model.jpg");
+}
+
+.rightSection{
+    background: url("../images/men-model.jpg");
+}
+
+.leftSection,
+.rightSection{
+    width: 50%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20% 20%;
+    position: relative;
+}
+
+.womenText{
+    color: #ffffff52;
+    font-weight: bold;
+    font-size: 5rem;
+    position: absolute;
+    bottom: 45%;
+    right: -154px;
+    z-index: 99;
+}
+
+.menAndWomen{
+    width: 100%;
+    height: 100%;
+    background: url("../images/pexels-djordje-cvetkovic-6389351.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 36% 36%;
+    position: relative;
+    display: none;
+}
+
+.menAndWomen::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #00000054;
+    position: absolute;
+    z-index: 99;
+}
+
+
+@media (max-width: 1200px) {
+    .womenText{
+        font-size: 3.5rem;
+        right: -107px;
+        bottom: 5%;
+        color: #78787894;
+    }
+}
+
+@media (max-width: 1024px) {
+    .womenText{
+        font-size: 2.7rem;
+        right: -83px;
+    }
+}
+
+@media (max-width: 768px) {
+    .leftSection,
+    .rightSection{
+        display: none;
+    }
+
+    .menAndWomen{
+        display: block;
+    }
+}

@@ -18,7 +18,8 @@ const SpecialProducts = () => {
     const discount = 50;
 
     useEffect(() => {
-        dispatchProducts(fetchAPI("SPECIAL"));
+        if (!specialProducts.length)
+            dispatchProducts(fetchAPI("SPECIAL"));
     }, [])
 
     return (

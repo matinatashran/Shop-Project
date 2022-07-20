@@ -6,7 +6,9 @@ import { Provider } from 'react-redux';
 import './App.css';
 
 // components
-import Header from './components/header/Header';
+import Header from './components/Header';
+import Navbar from './components/Navbar';
+import Validation from './components/signUpAndSignIn/Validation';
 import SignIn from './components/signUpAndSignIn/SignIn';
 import SignUp from './components/signUpAndSignIn/SignUp';
 import CartGeneralInfo from './components/CartGeneralInfo';
@@ -17,11 +19,13 @@ import Cart from './components/Cart';
 import AllProducts from './components/AllProducts';
 import Footer from './components/footer/Footer';
 import Detail from './components/Detail';
+import Notify from './components/notification/Notify';
 
 // redux
 import store from './redux/store';
 
 const App = () => {
+
   return (
     <div className='shoppingContainer'>
       <Provider store={store}>
@@ -29,17 +33,20 @@ const App = () => {
             <Route path='/home' element={ 
               <>
                 <Header/> 
+                <Navbar/>
                 <CartGeneralInfo/>
                 <Categories/>
                 <SpecialProducts/>
                 <AllProducts/>
               </>
             }/>  
-            <Route path='/sign-in' element={ <SignIn/> }/>
-            <Route path='/sign-up' element={ <SignUp/> }/>
+            {/* <Route path='/sign-in' element={ <SignIn/> }/>
+            <Route path='/sign-up' element={ <SignUp/> }/> */}
+            <Route path='/validation/:pageType' element={<Validation />}/>
             <Route path='/categories/:category' element={ 
               <>
                 <Header/> 
+                <Navbar/>
                 <CartGeneralInfo/>
                 <Categories/>
                 <SubCategory/>
@@ -48,15 +55,28 @@ const App = () => {
             <Route path='/products' element={ 
               <>
                 <Header/> 
+                <Navbar/>
                 <CartGeneralInfo/>
                 <AllProducts/> 
               </>
             }/>
-            <Route path='/products/:id' element={ <Detail/> }/>
-            <Route path='/cart' element={ <Cart/> }/>
+            <Route path='/products/:id' element={ 
+              <>
+                <Navbar/>
+                <CartGeneralInfo/>
+                <Detail/>
+              </> 
+            }/>
+            <Route path='/cart' element={ 
+              <>
+                <Navbar/>
+                <Cart/> 
+              </>
+            }/>
             <Route path='/' element={ <Navigate to="/home"/> }/>
           </Routes>
-          <Footer/>
+          {/* <Footer/> */}
+          <Notify/>
       </Provider>
     </div>
   );

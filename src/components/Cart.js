@@ -2,10 +2,6 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import notify from './toastify';
-
 // style
 import style from './cart.module.css';
 
@@ -15,6 +11,9 @@ import CartProduct from './shared/CartProduct';
 // actions
 import { clear, checkout } from '../redux/cart/cartActions';
 
+// helper
+import { notification } from './notification/Notify';
+
 const Cart = () => {
 
     const state = useSelector(state => state.cartState);
@@ -23,7 +22,7 @@ const Cart = () => {
 
     useEffect(() => {
         if (state.checkout){
-            notify("Your shopping is successfully", "success")
+            notification("Your Shopping chekout successfully", "SUCCESS");
             if (!state.itemsCounter){
                 dispatchCart(clear());
             }
@@ -32,54 +31,50 @@ const Cart = () => {
 
     return (
         <div className={style.cartContainer}>
-            <div className={style.title}>
-                <span>Atashran</span>Store
-            </div>
-            <div>
-                <div className={style.left}>
+            <section className={style.title}>
+                Cart
+            </section>
+            <section className={style.cartHeader}>
+                <div className={style.cartInfo}>
+                    <p>
+                        Quantity: <span>{state.itemsCounter}</span>
+                    </p>
+                    <p>
+                        Total: <span>{state.totalPrice.toFixed(2)} $</span>
+                    </p>
+                </div>
+                <div className={style.cartInfoBtns}>
+                    <button className={style.clearBtn} onClick={() => dispatchCart(clear())}>Clear</button>
                     {
-                        state.selectedItems.length ? 
-                            state.selectedItems.map(item => 
-                                <CartProduct
-                                    key={item.id}
-                                    id={item.id}
-                                    image={item.image}
-                                    category={item.category}
-                                    price={item.price}
-                                    productData={item}
-                                    dispatchCart={dispatchCart}   
-                                    state={state} 
-                                    discount={item.id > 4 ? 0 : discount}
-                                />)
-                        :
-                                <div className={style.emptyAlarm}>
-                                    <button className={style.backBtn}>
-                                        <Link to="/home">Back to Home</Link>
-                                    </button>
-                                    <div>Your Cart is Empty</div>
-                                </div>
+                        state.itemsCounter ?
+                            <button className={style.checkoutBtn} onClick={() => dispatchCart(checkout())}>Checkout</button>
+                        :   
+                            <button className={style.fakeButton}>Checkout</button>
                     }
                 </div>
-                <div className={style.right}>
-                    <div className={style.factor}>
-                        <div> 
-                            Quantity : <span className={style.quantity}>{state.itemsCounter}</span> 
-                        </div>
-                        <div> 
-                            Total : <span className={style.total}>{state.totalPrice.toFixed(2)} $</span> 
-                        </div>
-                        
-                        <div className={style.buttonBox}>
-                            <button onClick={() => dispatchCart(clear())}>Clear</button>
-                            <button className={ !state.itemsCounter && style.checkoutBtn} 
-                                onClick={ state.itemsCounter && (() => dispatchCart(checkout())) }
-                                >Checkout</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </section>
+            <section className={style.showProducts}>
+                {
+                    state.selectedItems.length ? 
+                        state.selectedItems.map(item => 
+                            <CartProduct
+                                key={item.id}
+                                id={item.id}
+                                image={item.image}
+                                category={item.category}
+                                price={item.price}
+                                productData={item}
+                                dispatchCart={dispatchCart}   
+                                state={state} 
+                                discount={item.id > 4 ? 0 : discount}
+                            />)
+                    :
+                            <div className={style.emptyAlarm}>
 
-            <ToastContainer/>
+                            </div>
+                }
+            </section>
+
         </div>
     );
 };

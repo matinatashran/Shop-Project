@@ -8,7 +8,7 @@ const Footer = () => {
     return (
         <div className={style.footerContainer}>
             <div className={style.belong}>      
-                All rights of this site belong to Atashran store
+                All rights of this site belong to Atashran Shop
             </div>
             <div className={style.aouther}>
                 Site Aouther is <a href='https://admirable-swan-bbeece.netlify.app' target="_blank">MATIN ATASHRAN</a>

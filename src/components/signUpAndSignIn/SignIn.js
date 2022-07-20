@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
-import { Link, Route, Navigate, Routes } from 'react-router-dom';
-
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import notify from '../toastify';
+import { Link } from 'react-router-dom';
 
 // style
 import style from './signUpAndSignIn.module.css';
@@ -11,6 +7,8 @@ import style from './signUpAndSignIn.module.css';
 // components
 import Field from './field/Field';
 
+// helper
+import { notification } from '../notification/Notify';
 
 const data = [
     {id: 1, name: "Email", type: "text", value: "", error: "", touch: false},
@@ -32,8 +30,8 @@ const SignIn = () => {
 
         let i = 0;
         while (i < data.length){
+            notification("Email or Password not correct!", "ERROR");
             if (data[i].error){
-                notify("An error occured.");
                 setTouch({
                     Email: true,
                     Password: true,
@@ -44,25 +42,15 @@ const SignIn = () => {
         }
 
         if (i === (data.length)){
-            notify("Welcom to your Shop.", "success");
+            notification("Welcom!", "SUCCESS");
         }
-
-
     }
 
     return (
         <div className={style.signInContainer}>
-            <div className={style.menu}>
-                <div className={style.shoppingTitle}>
-                    <span>Atashran</span>Store
-                </div>
-                <div className={style.backToHomeBtn}>
-                    <Link to="/home">Home</Link>
-                </div>
-            </div>
             <form className={style.fields} onSubmit={submitHandler}>
                 <div className={style.pageTitle}>
-                    Sign In
+                    Enter Your Account
                 </div>
                 {
                     data.map(item =>
@@ -80,12 +68,10 @@ const SignIn = () => {
                         />
                     )
                 }
-                <div className={style.signUpAndSignInBtnBox}>
-                    <Link to="/sign-up">Sign Up</Link>
-                    <button type='submit'>Register</button>
+                <div className={style.pageBtns}>
+                    <button type='submit'>Sign In</button>
                 </div>
             </form>
-            <ToastContainer/>
         </div>
     );
 };

@@ -1,38 +1,55 @@
-@font-face {
-    font-family: Kanit-italic;
-    src: url("../fonts/Kanit-Italic.ttf");
-}
-
 .cartGeneralInfoContainer{
-    width: 99%;
-    height: 55px;
-    margin: 20px auto;
-    box-shadow: 0 0 5px 1px #b500fd;
-    border-radius: 10px;
     position: sticky;
-    top: 1.8px;
-    left: 0;
-    z-index: 99;
-    font-family: Kanit-italic;
-    background-color: #fff;
+    top: 60px;
+    right: 30px;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    font-size: 1.2rem;
+    justify-content: right;
+    margin: 20px;
+    z-index: 99;
 }
 
 .cartIcon{
-    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid #ff4400;
+    background-color: #363636;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    cursor: pointer;
+    color: #ff4400;
+    z-index: 99;
+}
+
+.cartIcon div{
+    width: 35px;
+    height: 35px;
+    border: 3px solid #ff4400;
+    border-radius: 50%;
+    font-size: 1.2rem;
     transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
 }
 
-.cartIcon a{
-    color: #ff0000;
-}
+@media (max-width: 480px) {
+    .cartGeneralInfoContainer{
+        top: 10px;
+        margin: 0 10px;
+    }
 
-.cartIcon:hover{
-    transform: scale(1.1);
-}
+    .cartIcon{
+        width: 40px;
+        height: 40px;
+    }
 
-.quantity{ color: #ff0000; }
-.total{color: #00ce00;}
+    .cartIcon div{
+        width: 28px;
+        height: 28px;
+        font-size: 0.9rem;
+    }
+}

@@ -1,152 +1,52 @@
 .signUpContainer,
 .signInContainer{
-    width: 100%;
-}
-
-.signInContainer{
-    height: 82vh;
-}
-
-.menu{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.shoppingTitle{
-    text-align: left;
-    margin: 40px 20px;
-    font-family: Righteous;
-    font-weight: bold;
-    font-size: 3.2rem;
-}
-
-.shoppingTitle span{
-    color: #5b18be;
-    margin-right: 10px;
-}
-
-.menu a{
-    margin: 40px;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-family: Righteous;
-    font-weight: bold;
-    padding: 3px 20px;
-    border: 2px solid #5b18be;
-    border-radius: 5px;
-    transition: 0.3s;
-}
-
-.menu a:hover{
-    background-color: #5b18be;
-    color: #fff;
+    width: 78%;
+    margin: 80px auto 0 auto;
 }
 
 .pageTitle{
     margin: 10px;
     text-align: center;
     font-family: Righteous;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: bold;
-    color: #5b18be;
+    color: #ff4400;
 }
 
-.fields{
-    width: 38%;
-    margin: 50px auto;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 5px 1px #5b18be;
+.pageBtns{
+    width: 100%;
+    position: absolute;
+    bottom: 60px;
+    text-align: center;
+    left: 0;
 }
 
-.signUpAndSignInBtnBox{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 40px 0;
-}
-
-.signUpAndSignInBtnBox a{
-    text-decoration: none;
+.pageBtns button{
+    width: 80%;
+    height: 55px;
     font-family: Righteous;
-    font-weight: bold;
-    color: #5b18be;
-}
-
-.signUpAndSignInBtnBox button{
-    padding: 7px 20px;
-    border-radius: 5px;
-    background-color: #5b18be;
     color: #fff;
+    background-color: #1c4b8b;
     border: none;
-    font-family: Righteous;
-    font-size: 0.9rem;
     cursor: pointer;
-    transition: 0.3s;
-}
-
-.signUpAndSignInBtnBox button:active{
-    transform: scale(0.95);
+    font-size: 1.2rem;
+    border-radius: 10px;
 }
 
 
-
-@media (max-width: 1300px) {
-    .fields{
-        width: 70%;
-    }
+@media (max-width: 1024px) {
+    .pageBtns{
+        bottom: 40px;
+    } 
 }
 
-
-@media (max-width: 1000px) {
-    .shoppingTitle{
-        margin: 30px 20px;
-        font-size: 2.5rem;
-    }
-
-    .fields{
-        width: 80%;
-    }
-}
-
-@media (max-width: 600px) {
-    .fields{
-        width: 85%;
+@media (max-width: 768px) {
+    .signUpContainer,
+    .signInContainer{
+        width: 99%;
     }
 
     .pageTitle{
-        font-size: 1.7rem;
-    }
-
-    .menu{
-        display: block;
-        text-align: right;
-    }
-
-    .menu a{
-        margin: 40px 10px;
-        text-decoration: none;
-        font-size: 0.9rem;
-        font-weight: 600;
-    }
-}
-
-@media (max-width: 550px) {
-    .shoppingTitle{
-        margin: 20px;
-        font-size: 2rem;
-    }
-
-    .pageTitle{
-        font-size: 1.5rem;
-    }
-
-    .fields{
-        width: 95%;
-    }
-
-    .signUpAndSignInBtnBox button{
-        font-size: 0.8rem;
+        font-size: 1.4rem;
     }
 }

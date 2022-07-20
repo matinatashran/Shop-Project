@@ -1,0 +1,166 @@
+.validationContainer{
+    width: 100%;
+    height: 100vh;
+}
+
+.validation{
+    width: 1000px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    position: relative;
+}
+
+.validation::after{
+    content: "";
+    position: absolute;
+    left: -170px;
+    top: 0;
+    width: 500px;
+    height: 100%;
+    background-color: #1c4b8b;
+    z-index: -1;
+}
+
+.innerContainer{
+    width: 1000px;
+    height: 680px;
+    box-shadow: 0 0 35px 2px #0000005f;
+    margin: auto;
+    z-index: 99;
+    display: flex;
+}
+
+.leftContainer{
+    width: 330px;
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    font-family: Righteous;
+}
+
+.leftTitle{
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.leftContainer a, 
+.signUpOrSignInBox a{
+    text-decoration: none;
+    margin: 20px auto;
+    text-align: center;
+    color: #fff;
+    background-color: #ff4400;
+    width: 80px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 30px;
+    font-family: Righteous;
+}
+
+.text{
+    font-size: 0.8rem;
+}
+
+.signUpOrSignInBox{
+    width: calc(100% - 330px);
+    height: 100%;
+    position: relative;
+}
+
+.signUpOrSignInBox a{
+    display: none;
+    position: absolute;
+    left: 20px;
+    font-size: 0.9rem;
+}
+
+.title{
+    font-size: 1.8rem;
+    font-family: Righteous;
+    font-weight: 800;
+    color: #1c4b8b;
+    position: absolute;
+    top: 20px;
+    right: 25px;
+}
+
+/* @media (min-width: 1536px) {
+    .validationContainer{
+        width: 1536px;
+    }
+} */
+
+@media (max-width: 1200px) {
+    .innerContainer, 
+    .validation{
+        width: 850px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .innerContainer, 
+    .validation{
+        width: 720px;
+    }
+    
+    .validation::after{
+        left: -160px;
+        width: 440px;
+    }
+    
+    .leftContainer{
+        width: 280px;
+        padding: 20px;
+    }
+    
+    .signUpOrSignInBox{
+        width: calc(100% - 280px);
+    }
+
+}
+
+@media (max-width: 768px) {
+    .innerContainer, 
+    .validation{
+        width: 460px;
+    }
+
+    .validation::after, 
+    .leftContainer{
+        display: none;
+    }
+
+    .signUpOrSignInBox{
+        width: 100%;
+    }
+
+    .signUpOrSignInBox a{
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .innerContainer, 
+    .validation{
+        width: 98%;
+    }
+
+    .validation::after, 
+    .leftContainer{
+        display: none;
+    }
+
+    .signUpOrSignInBox{
+        width: 100%;
+    }
+
+    .title{
+        font-size: 1.4rem;
+    }
+}

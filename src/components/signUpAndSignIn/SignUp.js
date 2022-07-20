@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import notify from '../toastify';
+import { notification } from '../notification/Notify';
 
 // style
 import style from './signUpAndSignIn.module.css';
@@ -15,10 +13,8 @@ import Field from './field/Field';
 const data = [
     {id: 1, name: "Name", type: "text", value: "", error: ""},
     {id: 2, name: "Email", type: "text", value: "", error: ""},
-    {id: 3, name: "Number", type: "text", value: "", error: ""},
-    {id: 4, name: "Password", type: "password", value: "", error: ""},
-    {id: 5, name: "ConfirmPassword", type: "password", value: "", error: ""},
-    {id: 6, name: "Accepted", type: "checkBox", value: false, error: ""},
+    {id: 3, name: "Password", type: "password", value: "", error: ""},
+    {id: 4, name: "ConfirmPassword", type: "password", value: "", error: ""},
 ];
 
 
@@ -29,10 +25,8 @@ const SignUp = () => {
     const [touch, setTouch] = useState({
         Name: false,
         Email: false,
-        Number: false,
         Password: false,
         ConfirmPassword: false,
-        Accepted: false
     });
 
     const submitHandler = (event) => {
@@ -40,39 +34,29 @@ const SignUp = () => {
 
         let i = 0;
         while (i < data.length){
+            notification("An Error Occured.", "ERROR");
             if (data[i].error){
-                notify("An error occured.");
                 setTouch({
                     Name: true,
                     Email: true,
-                    Number: true,
                     Password: true,
                     ConfirmPassword: true,
-                    Accepted: true
                 });
                 break;
             }
             i++;
         }
 
-        if (i === (data.length))
-            notify("Your sign up is successfully.", "success");
-
+        if (i === (data.length)){
+            notification("Welcom!", "SUCCESS");
+        }
     }
 
     return (
         <div className={style.signUpContainer}>
-            <div className={style.menu}>
-                <div className={style.shoppingTitle}>
-                    <span>Atashran</span>Store
-                </div>
-                <div className={style.backToHomeBtn}>
-                    <Link to="/home">Home</Link>
-                </div>
-            </div>
             <form className={style.fields} onSubmit={submitHandler}>
                 <div className={style.pageTitle}>
-                    Sign Up
+                    Create Acount
                 </div>
                 {
                     data.map(item =>
@@ -90,12 +74,10 @@ const SignUp = () => {
                         />
                     )
                 }
-                <div className={style.signUpAndSignInBtnBox}>
-                    <Link to="/sign-in">Sign In</Link>
-                    <button type='submit'>Register</button>
+                <div className={style.pageBtns}>
+                    <button type='submit'>Sign Up</button>
                 </div>
             </form>
-            <ToastContainer/>
         </div>
     );
 };
