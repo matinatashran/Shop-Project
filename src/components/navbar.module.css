@@ -139,7 +139,7 @@
 
 @media (max-width: 480px){
     .navbarContainer{
-        background-color: transparent;
+        background-color: #fff;
     }
 
     .buttonBox, .links{

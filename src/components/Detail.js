@@ -13,49 +13,9 @@ import { quantityCount } from '../helper/functions';
 import fetchAPI from '../redux/products/productsActions';
 import { addItem, removeItem, increaseItem, decreaseItem } from '../redux/cart/cartActions';
 
-// styledComponents
-const Span = styled.span`
-    font-size: 0.9rem;
-    margin-right: 30px;
-    position: absolute;
-    bottom: -2px;
-    border: none;
-    padding-bottom: 4px;
-    font-weight: 500;
-    color: #6d6d6d;
-    cursor: pointer;
+// styled Components
+import { Span, Descreption, ProDetail } from '../styledComponent/components';
 
-    :nth-child(${props => props.childOfSpan}){
-        color: #e3e3e3;
-        border-bottom: 3px solid;
-    }
-
-    :nth-child(2){
-        left: 140px;
-    }
-
-    @media (max-width: 480px) {
-        font-size: 0.8rem;
-        
-        :nth-child(2){
-            left: 120px;
-        }  
-    }
-`
-const Descreption = styled.div`
-    color: #969696;
-    font-size: 0.85rem;
-    font-weight: bold;
-    display: ${props => props.descrOrDetail === "DESCREPTION" ? "block" : "none"};
-    line-height: 18px;
-    @media (max-width: 480px) {
-        font-size: 0.75rem;
-    }
-`
-
-const ProDetail = styled.div`
-    display: ${props => props.descrOrDetail === "DETAIL" ? "block" : "none"};
-`
 
 const Detail = () => {
     

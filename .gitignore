@@ -12,7 +12,7 @@
 /build
 
 #folders
-/contexts
+/components/contexts
 
 # misc
 .DS_Store

@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 // style
@@ -18,6 +17,9 @@ const Cart = () => {
 
     const state = useSelector(state => state.cartState);
     const dispatchCart = useDispatch();
+
+    window.localStorage.setItem('userCart', JSON.stringify(state));
+
     const discount = 50;
 
     useEffect(() => {
@@ -74,7 +76,6 @@ const Cart = () => {
                             </div>
                 }
             </section>
-
         </div>
     );
 };

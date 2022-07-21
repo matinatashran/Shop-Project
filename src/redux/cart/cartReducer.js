@@ -72,7 +72,15 @@ const cartReducer = (state= initialState, action) => {
             };
 
         default:
-            return state;
+            const savedData = JSON.parse(window.localStorage.getItem('userCart'));
+            if (Object.keys(savedData).length){
+                return {
+                    ...savedData
+                }
+            }
+            else{
+                return state;
+            }
     }
 }
 

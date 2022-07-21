@@ -75,7 +75,7 @@ const App = () => {
             }/>
             <Route path='/' element={ <Navigate to="/home"/> }/>
           </Routes>
-          {/* <Footer/> */}
+          <Footer/>
           <Notify/>
       </Provider>
     </div>

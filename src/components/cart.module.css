@@ -91,7 +91,6 @@
     .showProducts{
         width: 750px;
     }
-
 }
 
 @media (max-width: 768px) {
@@ -115,12 +114,28 @@
     }
 
     .cartHeader, .showProducts{
-        width: 99%;
+        width: 90%;
+    }
+
+    .cartHeader{
+        top: 40px;
     }
 
     .cartInfo{
         flex-direction: column;
         align-items: flex-start;
         font-size: 1rem;
+    }
+
+    .cartInfo span{
+        font-size: 0.9rem;
+    }
+
+    .clearBtn, 
+    .checkoutBtn, 
+    .fakeButton{
+        padding: 5px 10px;
+        margin: 0 5px 10px 5px;
+        font-size: 0.9rem;
     }
 }

@@ -46,6 +46,7 @@
     .notifyContainer{
         width: 450px;
         left: calc(50% - 225px);
+        font-size: 1rem;
     }
 }
 
@@ -53,5 +54,6 @@
     .notifyContainer{
         width: 95%;
         left: 10px;
+        font-size: 0.9rem;
     }
 }
